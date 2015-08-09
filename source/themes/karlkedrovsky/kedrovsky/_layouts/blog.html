@@ -1,0 +1,6 @@
+{% extends "default" %}
+
+{% block content_wrapper %}
+  <em class="post-date">{{ item.date | date('M j, Y') }}</em>
+  {{ page.blocks.content | raw }}
+{% endblock %}

@@ -1,0 +1,24 @@
+---
+layout: default
+generator: pagination
+pagination:
+  max_per_page: 3
+use:
+  - posts
+---
+
+<h1>Karl Kedrovsky</h1>
+<p>This is the personal website of Karl Kedrovsky.</p>
+<p>Professionally I'm currently working at <a href="http://www.vml.com/">VML</a>, an interactive agency, as a Group Technical Director. I manage a group of technologists that do fun things like website builds, CMS implementations, digital strategy/planning and mobile applications. I'm mostly focused on delivering content management solutions using <a href="http://drupal.org/">Drupal</a> and <a href="http://www.wordpress.org/">Wordpress</a> but I also have extensive experience in application architecture and Java/JEE development. I also do a fair amount of technical consulting, lead the Drupal practice within VML and co-organize the <a href="http://www.meetup.com/Greater-Kansas-City-Drupal-User-Group/">local Drupal user group</a>.</p>
+<p>Personally I'm a Christian, husband (one wife - Martha) and father (two daughters - Abigail and Julia). We live in Overland Park KS, a suburb of Kansas City.</p>
+<hr>
+
+{% for item in page.pagination.items %}
+  <h2><a href="{{ item.url }}">{{ item.title }}</a></h2>
+  <em class="post-date">{{ item.date | date('M j, Y') }}</em>
+  {% set break_array =  item.blocks.content|split('<!-- break -->', 2) %}
+  {{ break_array[0]|raw }}
+  {% if break_array|length > 1 %}
+    <p><a href="{{ site.url }}{{ item.url }}">Read more</a></p>
+  {% endif %}
+{% endfor %}

@@ -1,0 +1,219 @@
+@charset 'UTF-8';
+
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic);
+@import url(http://fonts.googleapis.com/css?family=PT+Mono);
+@import url(http://fonts.googleapis.com/css?family=Anonymous+Pro&v1);
+
+@import "variables";
+@import "settings";
+
+// @import "../node_modules/foundation-sites/scss/foundation";
+@import "../node_modules/foundation-sites/scss/foundation/components/global";
+@import "../node_modules/foundation-sites/scss/foundation/components/type";
+@import "../node_modules/foundation-sites/scss/foundation/components/grid";
+@import "../node_modules/foundation-sites/scss/foundation/components/inline-lists";
+
+header {
+  height: 4rem;
+  line-height: 4rem;
+  margin-bottom: 2rem;
+  background-color: $black;
+  color: $white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 0 .5rem;
+  @media #{$medium-up} {
+    padding: 0;
+  }
+  .header-inner {
+    @include grid-row();
+  }
+  .site-name {
+    @include grid-column($columns: 12);
+    @media #{$medium-up} {
+      @include grid-column($columns: 4);
+    }
+    font-size: rem-calc(32);
+    padding-right: 2rem;
+    &:visited {
+      color: $white;
+    }
+  }
+  .nav {
+    @include grid-column($columns: 12);
+    @media #{$medium-up} {
+      @include grid-column($columns: 8);
+    }
+    @include inline-list;
+    display: none;
+    padding-top: rem-calc(20);
+    li {
+      padding-right: 1rem;
+    }
+    @media #{$medium-up} {
+      display: inline;
+    }
+  }
+}
+
+.slicknav_menu {
+  display: block;
+  background-color: $black;
+  @media #{$medium-up} {
+    display: none;
+  }
+}
+
+.slicknav_menu .slicknav_menutxt {
+  color: $white;
+  font-weight: none;
+  text-shadow: none;
+}
+
+.slicknav_menu .slicknav_icon-bar {
+  background-color: $white;
+}
+
+.slicknav_nav .slicknav_item:hover {
+//  @include border-radius(0 0);
+  background: $black;
+  color: $white;
+}
+
+.slicknav_nav a:hover {
+//  @include border-radius(0 0);
+  background: $black;
+}
+
+.slicknav_btn {
+  z-index: 9999;
+  margin-top: rem-calc(10);
+}
+
+.main {
+  @include grid-row();
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  padding: 0 .5rem;
+  @media #{$medium-up} {
+    padding: 0;
+  }
+  .content {
+    @include grid-column($columns: 12);
+    @media #{$medium-up} {
+      @include grid-column($columns: 8);
+    }
+  }
+  aside {
+    @include grid-column($columns: 12);
+    @media #{$medium-up} {
+      @include grid-column($columns: 4);
+    }
+    text-align: center;
+    ul.social-links {
+      @include inline-list;
+      li {
+        padding-right: rem-calc(5);
+        float: none;
+        display: inline-block;
+        margin: 0;
+      }
+    }
+  }
+}
+
+nav.pager a {
+  padding-right: 2rem;
+}
+
+footer {
+  height: 12rem;
+  line-height: 4rem;
+  background-color: $black;
+  color: $white;
+  width: 100%;
+  white-space: nowrap;
+  @media #{$medium-up} {
+    height: 4rem;
+  }
+  padding: 0 .5rem;
+  @media #{$medium-up} {
+    padding: 0;
+  }
+  .footer-inner {
+    @include grid-row();
+  }
+  .copyright, .tools, .creative {
+    @include grid-column($columns: 12);
+    @media #{$medium-up} {
+      @include grid-column($columns: 4);
+    }
+  }
+  .creative {
+    text-align: right;
+  }
+}
+
+p {
+  padding-bottom: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $red;
+}
+h3 {
+  font-weight: bold;
+}
+h4 {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: $orange;
+  &:hover {
+    color: $blue;
+  }
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+article ul {
+  list-style: disc outside;
+  padding-left: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+article ol {
+  list-style: decimal outside;
+  padding-left: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: $light_grey;
+}
+
+code,
+code[class*="language-"],
+pre[class*="language-"] {
+  font-size: .9em;
+  margin-bottom: 1.5rem;
+}
+
+em.post-date {
+  display: block;
+  padding-bottom: .5rem;
+}
+

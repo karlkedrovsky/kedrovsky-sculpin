@@ -1,0 +1,13 @@
+sculpin:
+  ignore: ["**/gulpfile.js", "**/node_modules/**/*", "**/scss/**/*"]
+
+sculpin_content_types:
+  posts:
+    layout: blog
+    permalink: blog/:year/:month/:day/:slug_title/index.html
+    taxonomies:
+      - tags
+
+sculpin_theme:
+  theme: karlkedrovsky/kedrovsky
+  

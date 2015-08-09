@@ -1,0 +1,76 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ site.url }}/{{ theme_path('css/styles.css') }}" />
+    <script src="{{ site.url }}/{{ theme_path('js/vendor/modernizr.js') }}"></script>
+  </head>
+  <body>
+
+    <header>
+      <div class="header-inner">
+        <a href="{{ site.url }}/" class="site-name">
+          Karl Kedrovsky
+        </a>
+        <ul class="nav">
+          <li><a href="{{ site.url }}/blog">Blog</a></li>
+          <li><a href="{{ site.url }}/resume">Resume</a></li>
+          <li><a href="{{ site.url }}/contact">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="main">
+      <div class="content">
+        {% if page.title is defined %}
+          <h1>{{ page.title }}</h1>
+        {% endif %}
+        {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
+      </div>
+      <aside>
+        <p>
+          <ul class="social-links">
+            <li><a href="http://www.linkedin.com/in/karlkedrovsky" target="_blank" title="LinkedIn"><img alt="LinkedIn" src="/{{ theme_path("images/linkedin.png") }}" /></a></li>
+            <li><a href="http://www.facebook.com/karlkedrovsky" target="_blank" title="Facebook"><img alt="Facebook" src="/{{ theme_path("images/facebook.png") }}" /></a></li>
+            <li><a href="http://www.twitter.com/karlkedrovsky" target="_blank" title="Twitter"><img alt="Twitter" src="/{{ theme_path("images/twitter.png") }}" /></a></li>
+            <li><a href="https://www.google.com/+KarlKedrovsky" target="_blank" title="Google Plus"><img alt="Google Plus" src="/{{ theme_path("images/googleplus.png") }}" /></a></li>
+            <li><a href="https://github.com/karlkedrovsky" target="_blank" title="Github"><img alt="Github" src="/{{ theme_path("images/github.png") }}" /></a></li>
+            <li><a href="/blog/feed.xml" target="_blank" title="RSS"><img alt="RSS" src="/{{ theme_path("images/rss.png") }}" /></a></li>
+          </ul>
+        </p>
+        <p>
+          <a href="https://association.drupal.org" target="_blank" title="Drupal Association"><img alt="Drupal Association" src="/{{ theme_path("images/da_individual_member_200.png") }}" /></a>
+        </p>
+        <p>
+          <a href="https://www.acquia.com/customer-success/learning-services/acquia-certification-program-overview" target="_blank" title="Acquia Certified Developer"><img alt="Acquia Certified Developer" src="/{{ theme_path("images/acquia_certified_developer_2014.png") }}" /></a>
+        </p>
+      </aside>
+    </div>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="copyright">
+          &copy; 2015 - Karl Kedrovsky
+        </div>
+        <div class="tools">
+          Made with <a href="https://sculpin.io" target="_blank">Sculpin</a>, and <a href="http://foundation.zurb.com/" target="_blank">Zurb Foundation</a>.
+        </div>
+        <div class="creative">
+          <a href="http://www.colourlovers.com/palette/694737/Thought_Provoking">Color theme</a> by <a href="http://www.colourlovers.com/lover/Miss_Anthropy/loveNote">Miss Anthropy</a>.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+//      var _gaq=[['_setAccount','UA-133695-1'],['_trackPageview']];
+//      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+//      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+//      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+  </body>
+</html>
+
+
+

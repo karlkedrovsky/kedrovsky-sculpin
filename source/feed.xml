@@ -1,0 +1,28 @@
+---
+use: ["posts"]
+permalink: blog/feed.xml
+---
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[{{ site.title }}]]></title>
+  <subtitle/>
+  <id>{{ site.url }}/blog</id>
+  <link href="{{ site.url }}/blog"/>
+  <link href="{{ site.url }}/blog/feed.xml" rel="self"/>
+  <updated>{{ site.calculated_date | date('c') }}</updated>
+  <author>
+    <name>Karl Kedrovsky</name>
+  </author>
+  {% for post in data.posts|slice(0, 10) %}
+  <entry>
+    <title><![CDATA[{{ post.title }}]]></title>
+    <link rel="alternate" href="{{ site.url }}{{ post.url }}"/>
+    <id>{{ site.url }}{{ post.url }}</id>
+    <published>{{ post.date|date('c') }}</published>
+    <updated>{{ post.date|date('c') }}</updated>
+    <author>
+      <name>Karl Kedrovsky</name>
+    </author>
+    <content type="html"><![CDATA[{{ post.blocks.content|raw }}]]></content>
+  </entry>
+  {% endfor %}
+</feed>
